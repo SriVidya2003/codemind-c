@@ -1,21 +1,18 @@
 #include<stdio.h>
 int main()
 {
-    int n,l,r,sum=0;
+    int sum=0;
+    int r,n,temp;
     scanf("%d",&n);
-    l=n;
-    while(n!=0)
+    temp=n;
+    while(temp>0)
     {
-      r=n%10;
-      sum=sum+r;
-      n=n/10;
+        r=temp%10;
+        sum=sum+r;
+        temp=temp/10;
     }
-    if(l%sum==0)
-    {
+    if(n%sum==0)
     printf("True");
-    }
     else
-    {
-        printf("False");
-    }
+    printf("False");
 }
