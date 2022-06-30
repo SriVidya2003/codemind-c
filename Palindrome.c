@@ -1,18 +1,21 @@
-#include<stdio.h>
-int main()
-{
-    int n,r,sum=0,temp;
-    scanf("%d",&n);
-    temp=n;
-    while(temp>0)
-    {
-        r=temp%10;
-        sum=sum*10+r;
-        temp=temp/10;
+#include <stdio.h>
+int main() {
+  int n, reversed = 0, remainder, original;
+    scanf("%d", &n);
+    original = n;
+
+    // reversed integer is stored in reversed variable
+    while (n != 0) {
+        remainder = n % 10;
+        reversed = reversed * 10 + remainder;
+        n /= 10;
     }
-    if(sum==n)
-    printf("True");
+
+    // palindrome if orignal and reversed are equal
+    if (original == reversed)
+        printf("True");
     else
-    printf("False");
+        printf("False");
+
     return 0;
 }
